@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width; maximum-scale=1.0; user-scalable=1;">
+  <title>Flea Market</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!--[if lte IE 8]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+  </script><![endif]-->
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="header-content">
+        <div class="nav-btn">
+          <div class="hamburger hamburger--elastic">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <a href="javascript:;">
+            <img src="<%= image_url 'logo.png' %>" />
+          </a>
+        </div>
+        <div class="pc-nav">
+          <ul>
+            <li class="shop">
+              <a href="javascript:;">SHOP</a>
+            </li>
+            <li class="blog">
+              <a href="javascript:;">BLOG</a>
+            </li>
+            <li class="about">
+              <a href="javascript:;">ABOUT</a>
+            </li>
+            <li class="lookbook">
+              <a href="javascript:;">LOOKBOOK</a>
+            </li>
+          </ul>
+        </div>
+        <div class="cart">
+          <a href="javascript:;">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="name">CART</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <ul>
+        <li class="shop">
+          <a href="javascript:;">SHOP</a>
+        </li>
+        <li class="blog">
+          <a href="javascript:;">BLOG</a>
+        </li>
+        <li class="about">
+          <a href="javascript:;">ABOUT</a>
+        </li>
+        <li class="lookbook">
+          <a href="javascript:;">LOOKBOOK</a>
+        </li>
+        <li class="contact">
+          <a href="javascript:;">contact us</a>
+        </li>
+        <li class="help">
+          <a href="javascript:;">help</a>
+        </li>
+        <li class="search">
+          <input type="text" placeholder="SEARCH">
+        </li>
+      </ul>
+    </div>
+    <div class="category-area">
+      <div class="category-content">
+        <ul class="category">
+          <li>
+            <a class="title" href="javascript:;">
+              Select a category <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="sub">
+              <li class="clothing">
+                <a href="javascript:;">clothing</a>
+              </li>
+              <li class="lifestyle">
+                <a href="javascript:;">lifestyle</a>
+              </li>
+              <li class="prints">
+                <a href="javascript:;">prints</a>
+              </li>
+              <li class="kids">
+                <a href="javascript:;">kids</a>
+              </li>
+              <li class="sale">
+                <a href="javascript:;">sale</a>
+              </li>
+              <li class="gift-guides">
+                <a href="javascript:;">gift guides</a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li class="category-sub">
+            <a class="title" href="javascript:;">
+              all <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="sub">
+              <li class="clothing">
+                <a href="javascript:;">clothing</a>
+              </li>
+              <li class="lifestyle">
+                <a href="javascript:;">lifestyle</a>
+              </li>
+              <li class="prints">
+                <a href="javascript:;">prints</a>
+              </li>
+              <li class="kids">
+                <a href="javascript:;">kids</a>
+              </li>
+              <li class="sale">
+                <a href="javascript:;">sale</a>
+              </li>
+              <li class="gift-guides">
+                <a href="javascript:;">gift guides</a>
+              </li>
+            </ul>
+          </li> -->
+        </ul>
+        <form class="inputbox">
+          <input required="required"/>
+          <button type="reset" class="del"></button>
+        </form>
+      </div>
+    </div>
+    
+  <%= yield %>
+
+    <div class="footer">
+      <div class="share">
+        <a href="javascript:;">
+          Refer a friend &amp; Get $15&nbsp;&nbsp;
+          <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="copyright">
+        <div>© Ugmonk, Inc. 2016</div>
+        <div>Website layout, design elements, content, and all product designs are the property of Ugmonk, Inc.<br>
+          and may not be used for any purpose without express written consent of Ugmonk, Inc.</div>
+      </div>
+    </div>
+    <div class="goTop-btn">
+      <a href="javascript:;">
+        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Merchandises', merchandises_path %>
+    <%= link_to 'Users', users_path %>
+    <% if logged_in? %>
+      <%= link_to "Edit Your Profile", edit_user_path(current_user) %>
+      <%= link_to "View Your Homepage", user_path(current_user) %>
+      <%= "Role: Admin" if current_user.admin? %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Login', login_path %>
+      <%= link_to 'Signup', signup_path %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  <!--<%= debug(params) if Rails.env.development? %>-->
+</body>
+</html>

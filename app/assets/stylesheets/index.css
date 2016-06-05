@@ -1,0 +1,313 @@
+.main {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.main .banner {
+  width: 102%;
+  margin-left: -1%;
+  font-size: 0;
+  margin-top: 50px;
+}
+.main .banner li {
+  display: inline-block;
+  width: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 1%;
+}
+.main .banner img {
+  width: 100%;
+}
+.main .section-title {
+  position: relative;
+  overflow: hidden;
+}
+.main .section-title h2 {
+  position: relative;
+  display: table;
+  margin: 60px auto 30px;
+}
+.main .section-title h2:before {
+  content: '';
+  display: block;
+  width: 1000px;
+  height: 1px;
+  background: #CCC;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-right: 15px;
+}
+.main .section-title h2:after {
+  content: '';
+  display: block;
+  width: 1000px;
+  height: 1px;
+  background: #CCC;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 15px;
+}
+.main .section-title h2 a {
+  color: #00aeff;
+  font-size: 32px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+.main .section-title h2 a:hover {
+  color: #000;
+}
+.main .product-area {
+  font-size: 0;
+  width: 102%;
+  margin-left: -1%;
+}
+.main .product {
+  display: inline-block;
+  width: 50%;
+  font-size: 14px;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 1%;
+}
+.main .product img {
+  width: 100%;
+}
+.main .product .spacer {
+  display: block;
+  width: 36px;
+  height: 6px;
+  margin: 3px auto;
+  background: #b5b5b5;
+}
+.main .product span {
+  transition: .3s;
+}
+.main .product .info {
+  height: 80px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.main .product:hover span {
+  color: #00aeff;
+}
+.main .product:hover .spacer {
+  background: #00aeff;
+}
+.main .view-all-btn {
+  max-width: 400px;
+  height: 53px;
+  background: #3e3e3e;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 53px;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+.main .view-all-btn a {
+  color: #fff;
+}
+.main .view-all-btn:hover {
+  background-color: #89e4ac;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  font-size: 0;
+  padding-bottom: 30px;
+}
+.slider .slider-content {
+  position: relative;
+  overflow: hidden;
+}
+.slider ul {
+  position: relative;
+  width: 99999px;
+}
+.slider li {
+  display: inline-block;
+  cursor: pointer;
+}
+.slider img {
+  width: 100%;
+}
+.slider .btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 43px;
+  height: 50px;
+  font-size: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.slider .btn i {
+  color: #848484;
+}
+.slider .btn.next {
+  right: 10px;
+  left: auto;
+}
+.slider .sliderBar {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+.slider .sliderBar li {
+  background-color: #848484;
+  margin-left: 6px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transition: .3s;
+}
+.slider .sliderBar .active {
+  background-color: #00aeff;
+}
+
+.goTop-btn {
+  position: fixed;
+  bottom: 8px;
+  right: 16px;
+  width: 46px;
+  height: 46px;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #848484;
+  cursor: pointer;
+  text-align: center;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #848484;
+  font-size: 18px;
+  line-height: 42px;
+  transition: .3s;
+}
+.goTop-btn i {
+  color: #848484;
+  transition: .3s;
+}
+.goTop-btn:hover {
+  border: 2px solid #00aeff;
+}
+.goTop-btn:hover i {
+  color: #00aeff;
+}
+
+.inputbox {
+  display: none;
+  height: 20px;
+  width: 200px;
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  font-size: 0;
+}
+.inputbox input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 1.5px 0;
+  border: 0;
+  background: none;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.15s;
+  transition-delay: 0s, 0.3s, 0s;
+  box-shadow: 0 0 0 2px currentColor;
+  color: #FFF;
+  cursor: pointer;
+  padding: 1.5px 0;
+  padding-right: 20px;
+  font-weight: lighter;
+  font-family: 'Roboto';
+}
+.inputbox input:focus, .inputbox input:valid {
+  width: 100%;
+  transition-delay: 0.3s, 0s, 0.3s;
+  outline: 0;
+  border-radius: 0;
+  cursor: text;
+  padding-left: 1.5px;
+}
+.inputbox input:focus + .del, .inputbox input:valid + .del {
+  pointer-events: all;
+  left: calc(100% - 10px);
+  transition-delay: 0.3s;
+}
+.inputbox input:focus + .del:focus, .inputbox input:valid + .del:focus {
+  box-shadow: 0 0 0 1px currentColor;
+  height: 15px;
+  width: 15px;
+}
+.inputbox input:focus + .del:before, .inputbox input:valid + .del:before {
+  transform: translate(-50%, -50%) rotate(-45deg) scaleY(0.7);
+  transition-delay: 0s;
+}
+.inputbox input:focus + .del:after, .inputbox input:valid + .del:after {
+  transform: translate(-50%, -50%) rotate(45deg) scaleY(0.7);
+  transition-delay: 0.15s;
+}
+.inputbox .del {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  background: none;
+  border-radius: 100%;
+  border: 0;
+  pointer-events: none;
+  transition: left 0.3s ease-in-out;
+  transition-delay: 0s;
+  color: #FFF;
+  cursor: pointer;
+}
+.inputbox .del:focus {
+  outline: none;
+}
+.inputbox .del:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  width: 2px;
+  height: 15px;
+  transform: translate(13.5px, 13.5px) translate(-50%, -50%) rotate(-45deg) scaleY(1);
+  transition: transform 0.15s ease-in-out;
+  transition-delay: 0.45s;
+}
+.inputbox .del:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  width: 2px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
+  transition: transform 0.15s ease-in-out;
+  transition-delay: 0.3s;
+}
